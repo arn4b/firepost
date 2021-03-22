@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+p {
+    font-size: 1.25vmax;
+    font-family: 'Zilla Slab', serif;
+}

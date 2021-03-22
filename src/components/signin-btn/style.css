@@ -1,0 +1,9 @@
+.signInBtn {
+    background-color: #ffa611;
+    max-width: 15vw;
+    text-align: center;
+    padding: 1vmax;
+    border-radius: 7px;
+    font-size: 1.25vmax;
+    font-family: 'Zilla Slab', serif;
+}
