@@ -1,6 +1,6 @@
-import React, {useState, useRef} from 'react'
+import React from 'react'
 import './App.css';
-import { SignInBtn } from './components';
+import { UserContextProvider } from './contexts/user';
 import { Home } from './pages';
 
 
@@ -9,9 +9,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Home />
-      </header>
+      <UserContextProvider>
+        <header className="App-header">
+          <Home />
+        </header>
+      </UserContextProvider>
     </div>
   );
 }

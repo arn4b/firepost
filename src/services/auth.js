@@ -7,6 +7,7 @@ export const signInWithGoogle = async () => {
     await auth.signInWithPopup(provider)
     .then((res) => {
         console.log(res.user);
+        user = res.user;
     })
     .catch((error) => {
         console.log(error.message);
@@ -15,7 +16,7 @@ export const signInWithGoogle = async () => {
     return user;
 };
 
-export const logout = () => {
+export const logout = async () => {
     
     let logout_success;
     await auth.signOut()

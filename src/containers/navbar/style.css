@@ -2,9 +2,25 @@
     display: flex;
     justify-content: space-between;
     padding: 12px 24px;
+    background-color: blanchedalmond;
 }
 
 p {
     font-size: 1.25vmax;
     font-family: 'Zilla Slab', serif;
+    padding: 1vmax;
+}
+
+.user-info {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-img {
+    height: 7vh;
+    border-radius: 0.75vmax;
+}
+
+.userName {
+    font-weight: 700;
 }
