@@ -9,7 +9,7 @@ export default function Navbar() {
     
     return (
         <div className="navbar">
-            <p>FirePost 🔥</p>
+            <h2>FirePost 🔥</h2>
 
             {
 
@@ -18,7 +18,7 @@ export default function Navbar() {
             ?
             
             <div className="user-info">
-                <p>Welcome <span className="userName">{user.displayName}</span></p>
+                <p className="welcome">Welcome <span className="userName">{user.displayName}</span></p>
                 <img className="navbar-img" src={user.photoURL} /> 
             </div>
 
