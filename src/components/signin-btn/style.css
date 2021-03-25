@@ -1,20 +1,18 @@
 .signInBtn {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     max-width: 15vw;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     border-radius: 7px;
     font-size: 1.25vmax;
-    font-family: 'Zilla Slab', serif;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
+    border: 2px #000 solid;
 }
 
 .google {
     max-width: 2vmax;
-}
-
-.google1 {
     vertical-align: middle;
 }
 

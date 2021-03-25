@@ -3,24 +3,22 @@
     justify-content: space-between;
     padding: 12px 24px;
     background-color: #FFCB2B;
-    box-shadow:  5px 5px 10px #c1c1c1,
-    -5px -5px 10px #ffffff;
 }
 
 h2 {
-    font-family: 'Zilla Slab', serif;
-    padding: 1vmax;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 1vh;
 }
 
 .user-info {
     display: flex;
     justify-content: center;
     font-size: 1.25vmax;
-    font-family: 'Zilla Slab', serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .welcome {
-    padding: 1vw;
+    padding: 1vmax;
 }
 
 .navbar-img {

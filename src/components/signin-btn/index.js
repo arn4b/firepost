@@ -17,7 +17,7 @@ export default function SignInBtn() {
     return (
 
      <div className="signInBtn" onClick = {signInBtnClick}>
-        <p>Sign In <span className="google1"><img className="google" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" /></span></p>
+        <p>Sign In <span><img className="google" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" /></span></p>
     </div> 
 
     );

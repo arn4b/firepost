@@ -18,7 +18,7 @@ export default function Navbar() {
             ?
             
             <div className="user-info">
-                <p className="welcome">Welcome <span className="userName">{user.displayName}</span></p>
+            <p  className="welcome">Welcome <span className="userName">{user.displayName}</span></p>
                 <img className="navbar-img" src={user.photoURL} /> 
             </div>
 
