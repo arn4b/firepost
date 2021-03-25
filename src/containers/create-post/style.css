@@ -3,8 +3,14 @@
     align-items: center;
     justify-content: center;
     padding-top: 30px;
-    font-size: 1.25vmax;
+    font-size: 1.5vmax;
     font-family: 'Zilla Slab', serif;
+}
+
+.cp_main {
+    width:100%;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 768px) {
