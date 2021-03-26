@@ -3,6 +3,7 @@
     justify-content: space-between;
     padding: 12px 24px;
     background-color: #FFCB2B;
+    position: sticky;
 }
 
 h2 {
@@ -13,7 +14,7 @@ h2 {
 .user-info {
     display: flex;
     justify-content: center;
-    font-size: 1.25vmax;
+    font-size: 20px;
     font-family: 'Poppins', sans-serif;
 }
 

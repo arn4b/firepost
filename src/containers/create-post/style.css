@@ -10,7 +10,7 @@
 .cp_main {
     background-color: #fff;
     width: 100%;
-    max-width: 50%;
+    max-width: 45%;
     border-radius: 10px;
     padding: 12px 16px;
 }
@@ -26,6 +26,15 @@
 
 .uploadBtn:hover {
     transform: scale(1.2); 
+}
+
+.addPic {
+    transition: transform .35s;
+    vertical-align: middle;
+}
+
+.addPic:hover {
+    transform: scale(1.2);
 }
 
 #image-preview {
@@ -56,8 +65,23 @@
         font-size: 3vmax;
     }
 
+    .cp_text {
+        font-size: 2.25vmax;
+    }
+
+    .uploadBtn {
+        font-size: 2vmax;
+    }
+
     .cp_main {
         width: 100%;
-        max-width: 90%;
+        max-width: 85%;
     }
+
+    #image-preview {
+        max-width: 30%;
+        border-radius: 10px;
+        margin: 1vh 0px;
+    }
+    
 }

@@ -5,7 +5,6 @@ import makeId from '../../helper/functions'
 import "./style.css";
 
 import AddAPhotoIcon from '@material-ui/icons/AddAPhoto';
-import { MarkunreadOutlined } from '@material-ui/icons';
 import { db, storage } from '../../firebase';
 
 import firebase from 'firebase';
@@ -36,10 +35,7 @@ export default function CreatePost() {
             var imageName = makeId(10);
             const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
 
-            uploadTask.on("state_changed", (snapshot) => {
-                const progress = Math.round((snapshot.byesTransferred/snapshot.totalBytes) * 100);
-
-            }, (error) => {
+            uploadTask.on("state_changed", (error) => {
                 console.log(error);
             }, () => {
                 storage.ref("images").child(`${imageName}.jpg`).getDownloadURL().then((imageURL) => {
@@ -49,8 +45,11 @@ export default function CreatePost() {
                         photoURL: imageURL,
                         username: user.email.replace("@gmail.com", ""),
                         profileURL: user.photoURL
-                    })
-                })
+                    });
+                });
+
+                setCaption("");
+                setImage(null);
             });
         }
     };
@@ -76,7 +75,7 @@ export default function CreatePost() {
                 </div>
 
                 <div className="cp_bottom">
-                    <label htmlFor = "fileInput">
+                    <label className="addPic" htmlFor = "fileInput">
                         <AddAPhotoIcon/>
                     </label>
                     <input id="fileInput" type="file" accept="image/*" onChange={handleChange}></input>
