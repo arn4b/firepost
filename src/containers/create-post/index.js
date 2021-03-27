@@ -9,12 +9,16 @@ import { db, storage } from '../../firebase';
 
 import firebase from 'firebase';
 
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Alert from '@material-ui/lab/Alert';
+
 export default function CreatePost() {
 
     const [user, setUser] = useContext(UserContext).user;
     const [caption, setCaption] = useState("");
 
     const [image, setImage] = useState(null);
+    const [progress, setProgress] = useState(0);
 
     const handleChange = (e) => {
         if(e.target.files[0]) {
@@ -35,8 +39,19 @@ export default function CreatePost() {
             var imageName = makeId(10);
             const uploadTask = storage.ref(`images/${imageName}.jpg`).put(image);
 
-            uploadTask.on("state_changed", (error) => {
+            uploadTask.on("state_changed", 
+            (snapshot) => {
+                // progress function .....
+                const progress = Math.round(
+                  (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+                setProgress(progress);
+
+                console.log(progress)
+              },
+              (error) => {
                 console.log(error);
+                alert(error.message);
             }, () => {
                 storage.ref("images").child(`${imageName}.jpg`).getDownloadURL().then((imageURL) => {
                     db.collection("posts").add({
@@ -49,7 +64,10 @@ export default function CreatePost() {
                 });
 
                 setCaption("");
-                setImage(null);
+                
+                document.getElementById("image-preview").style.display = "none";
+
+                console.log("posted");
             });
         }
     };
@@ -71,6 +89,17 @@ export default function CreatePost() {
 
                     <div className="cp_imgpreview">
                         <img id="image-preview" />
+
+                        {progress === 0 ? (
+                            <></>
+                        ) : (
+                            <CircularProgress
+                            className="circularProgress"
+                            variant="determinate"
+                            value={progress}
+                            style={{thickness: "5"}}
+                            />
+                        )}
                     </div>
                 </div>
 
