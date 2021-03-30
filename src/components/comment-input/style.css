@@ -1,0 +1,25 @@
+.commentInput {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ci_text {
+    border: #000 solid 1px;
+    border-radius: 5px;
+    max-width: 85%;
+    width: 100%;
+    resize: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.ci_b {
+    border: none;
+    background-color: #ffcb2b;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 12%;
+    margin-top: 10px;
+}

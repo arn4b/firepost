@@ -3,22 +3,26 @@ import './style.css'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import { Comment } from '../../components';
 import { db, storage } from '../../firebase';
+import CommentInput from '../../components/comment-input';
+import { UserContext } from '../../contexts/user';
 
 export default function Post({profileURL, username, id, photoURL, caption, comments}) {
 
-    const deletePost = () => {
-        var imageRef = storage.refFromURL(photoURL);
+    const [user, setUser] = useContext(UserContext).user;
 
-        imageRef.delete().then(function(){
-            console.log("delted the post");
-        }).catch(function(error) {
-            console.log(   `Error ${error}`);
-        });
+    // const deletePost = () => {
+    //     var imageRef = storage.refFromURL(photoURL);
 
-        db.collection("posts")
-        .doc(id)
-        .delete()
-    }
+    //     imageRef.delete().then(function(){
+    //         console.log("delted the post");
+    //     }).catch(function(error) {
+    //         console.log(   `Error ${error}`);
+    //     });
+
+    //     db.collection("posts")
+    //     .doc(id)
+    //     .delete()
+    // }
     return (
         <div className="post">
             <div className="p_header">
@@ -26,11 +30,11 @@ export default function Post({profileURL, username, id, photoURL, caption, comme
                     <img className="p_profilePic" src = {profileURL}/>
                     <p style={{marginLeft: "8px"}}>{username}</p>
                 </div>
-                <label htmlFor = "delete" style = {{cursor: "pointer"}}>
+                {/* <label htmlFor = "delete" style = {{cursor: "pointer"}}>
                     <DeleteForeverIcon style = {{fontSize: "40px"}}/>
-                </label>
+                </label> */}
 
-                <button id="delete" onClick={deletePost} style = {{display: "none"}}></button>
+                {/* <button id="delete" onClick={deletePost} style = {{display: "none"}}></button> */}
             </div>
 
             <div className="p_pic">
@@ -44,8 +48,14 @@ export default function Post({profileURL, username, id, photoURL, caption, comme
                 <p>{caption}</p>
             </div>
 
+            
+
             {comments ? comments.map((comment) => (
             <Comment username = {comment.username} caption = {comment.comment}/> )) : <></>}
+
+            {user ?
+            <CommentInput comments = {comments} id = {id}/> :
+            <></>}
         </div>
     )
 }

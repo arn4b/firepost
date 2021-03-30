@@ -27,6 +27,7 @@ export default function Feed() {
                     username = {post.username}
                     photoURL = {post.photoURL}
                     caption = {post.caption}
+                    comments = {post.comments}
                     />);
                 })
             }
