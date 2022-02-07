@@ -1,6 +1,10 @@
 # FirePost 🔥
 
+<img src="https://github.com/arn4b/theCoolerPortfolio/blob/master/src/images/firepost.png" />
+
 Social Media App to Login, Post and Comment on pictures Using *ReactJS*, *MaterialUI* and *FireBase*.
+
+The data is stored in Firestore, and User Authentication is done with Google Authentication using React's Context API.
 
 ## Hosted at: https://firepost-7275a.web.app/
 
